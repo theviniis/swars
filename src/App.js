@@ -10,8 +10,8 @@ function App() {
     <div className='App'>
       <ul>
         {people.response ? (
-          people.response.results.map((people) => (
-            <li key={people.name}>{people.name}</li>
+          people.response.results.map((person) => (
+            <li key={person.name}>{person.name}</li>
           ))
         ) : (
           <span>Loading...</span>
