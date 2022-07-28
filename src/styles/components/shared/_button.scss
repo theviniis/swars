@@ -1,0 +1,14 @@
+.button {
+  display: block;
+  cursor: pointer;
+  background: $c-primary;
+  outline: none;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  color: $color-fg;
+  @extend .transition;
+
+  &:hover {
+    box-shadow: darken($c-primary, 10%) 999em 0px 0px 0px inset;
+  }
+}

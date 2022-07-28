@@ -28,8 +28,8 @@ html {
 
 body {
   text-rendering: optimizeSpeed;
-  background-color: var(--color-bg);
-  color: var(--color-fg);
+  background-color: $color-bg;
+  color: $color-fg;
 }
 
 a,

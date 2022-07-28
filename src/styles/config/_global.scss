@@ -1,21 +1,27 @@
-:root {
-  //Theme scheme
-  --color-bg: #000;
-  --color-fg: #ffffff;
-  --content-bg: #333;
-  --blue: #201652;
-}
+//Theme scheme
+$color-bg: #000;
+$color-fg: #ffffff;
+$c-primary: #1d9bf0;
 
 @media (prefers-color-scheme: light) {
-  :root {
-    --color-bg: #f2f2f2;
-    --color-fg: #000;
-    --content-bg: #fff;
-  }
+  $color-bg: #f2f2f2;
+  $color-fg: #000;
+  $content-bg: #fff;
 }
 
 .grid-wrapper {
   display: grid;
-  grid-template-columns: minmax(120px, max-content) 1fr minmax(320px, 380px);
+  grid-template-columns: minmax(80px, max-content) minmax(324px, 1fr) minmax(
+      260px,
+      300px
+    );
   min-height: 100vh;
+}
+
+.transition {
+  transition: ease-in-out 150ms;
+}
+
+.hover {
+  background-color: lighten($color-bg, 10%);
 }

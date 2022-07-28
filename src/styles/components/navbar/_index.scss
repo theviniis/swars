@@ -1,4 +1,4 @@
-.nav-bar {
+.nav {
   --padding: 0.5rem 1rem;
   --border-radius: 999px;
 
@@ -7,17 +7,22 @@
   gap: 0.5rem;
   padding: 1rem;
   font-size: 1.25rem;
+  height: 100vh;
 
   .logo,
-  &__item {
+  &__item,
+  &__profile {
     padding: var(--padding);
     border-radius: var(--border-radius);
     cursor: pointer;
+
+    @extend .transition;
   }
 
   .logo:hover,
-  &__item:hover {
-    background-color: var(--blue);
+  &__item:hover,
+  &__profile:hover {
+    @extend .hover;
   }
 
   &__list {
@@ -34,7 +39,9 @@
     .icon {
       font-size: 28px;
     }
-
+    &.is-active {
+      font-weight: 700;
+    }
     @media (max-width: 1026px) {
       .section {
         display: none;
@@ -43,12 +50,53 @@
   }
 
   &__profile {
-    .profile__img {
-      // background-image: url('../../../assets/avatar.png');
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+    align-items: center;
+
+    .avatar {
+      --width: 2.5rem;
+    }
+
+    .profile__info {
+      display: flex;
+      flex-direction: column;
+      font-size: 15px;
+
+      .title {
+        font-weight: 700;
+        width: max-content;
+      }
+
+      .url {
+        font-weight: 300;
+        opacity: 0.8;
+      }
+    }
+
+    .see-more {
+      width: 24px;
+      fill: white;
+    }
+  }
+
+  @media (max-width: 1026px) {
+    & {
+      align-items: center;
+    }
+    &__profile {
+      .profile__info,
+      .see-more {
+        display: none;
+      }
     }
   }
 }
 
 .logo {
-  max-width: 6em;
+  width: 8rem;
+  min-width: 1.75rem;
+  fill: $color-fg;
+  margin-block-end: 0.5rem;
 }

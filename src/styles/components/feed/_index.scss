@@ -1,0 +1,19 @@
+@import 'new-post-card';
+.page-title {
+  font-size: 20px;
+  font-weight: 700;
+  padding-block: 0.5rem;
+}
+
+.feed {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-left: 1px solid #303030;
+  border-right: 1px solid #303030;
+  padding: 1rem;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
