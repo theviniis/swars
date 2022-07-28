@@ -3,12 +3,12 @@ import React from 'react';
 export const useFetch = (url, options) => {
   const [response, setResponse] = React.useState(null);
   const [error, setError] = React.useState(null);
-  const [loading, setLoading] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(false);
 
   React.useEffect(() => {
     const fetchData = async () => {
       try {
-        setLoading(true);
+        setIsLoading(true);
         const res = await fetch(url, options);
         const json = await res.json();
         setResponse(json);
@@ -16,10 +16,10 @@ export const useFetch = (url, options) => {
         setError(err);
         throw new Error(err);
       } finally {
-        setLoading(false);
+        setIsLoading(false);
       }
     };
     fetchData();
   }, [url, options]);
-  return { response, error, loading };
+  return { response, error, loading: isLoading };
 };

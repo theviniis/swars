@@ -1,0 +1,54 @@
+.nav-bar {
+  --padding: 0.5rem 1rem;
+  --border-radius: 999px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  font-size: 1.25rem;
+
+  .logo,
+  &__item {
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+  }
+
+  .logo:hover,
+  &__item:hover {
+    background-color: var(--blue);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .icon {
+      font-size: 28px;
+    }
+
+    @media (max-width: 1026px) {
+      .section {
+        display: none;
+      }
+    }
+  }
+
+  &__profile {
+    .profile__img {
+      // background-image: url('../../../assets/avatar.png');
+    }
+  }
+}
+
+.logo {
+  max-width: 6em;
+}
