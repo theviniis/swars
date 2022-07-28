@@ -11,17 +11,42 @@ $c-primary: #1d9bf0;
 
 .grid-wrapper {
   display: grid;
-  grid-template-columns: minmax(80px, max-content) minmax(324px, 1fr) minmax(
+  grid-template-columns: minmax(80px, max-content) minmax(340px, 1fr) minmax(
       260px,
       300px
     );
   min-height: 100vh;
 }
 
+.card {
+  background-color: lighten($color-bg, 5%);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.user-name {
+  font-weight: 700;
+  width: max-content;
+}
+
+.user-url {
+  font-weight: 300;
+  opacity: 0.7;
+}
+
 .transition {
   transition: ease-in-out 150ms;
 }
 
-.hover {
-  background-color: lighten($color-bg, 10%);
+@mixin flex($direction: row, $gap) {
+  display: flex;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+@mixin hover($hover, $color: $color-bg, $percent: 5%) {
+  @if ($hover == 'darken') {
+    background-color: darken($color, $percent);
+  } @else {
+    background-color: lighten($color, $percent);
+  }
 }

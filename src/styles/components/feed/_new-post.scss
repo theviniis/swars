@@ -1,14 +1,5 @@
-.post-card {
-  display: flex;
-  gap: 1rem;
-  // border-bottom: 1px solid #303030;
-  background-color: lighten($color-bg, 5%);
-  padding: 1rem;
-  border-radius: 1rem;
-
-  .avatar {
-    --width: 3rem;
-  }
+.new-post {
+  @include flex(row, 1rem);
 
   &__form {
     &,
@@ -22,8 +13,27 @@
       outline: none;
       resize: none;
       color: $color-fg;
-      border-bottom: 1px solid #303030;
+      border-bottom: 1px solid lighten($color-bg, 20%);
       font-size: 1.25rem;
+      @extend .transition;
+
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background: $c-primary;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        @include hover(darken, $c-primary);
+      }
+
+      &:focus,
+      &:not(:placeholder-shown) {
+        border-bottom: 1px solid $c-primary;
+      }
     }
 
     .form__controls {
@@ -40,7 +50,7 @@
         border-radius: 50%;
 
         &:hover {
-          @extend .hover;
+          @include hover(darken, $c-primary, 45%);
         }
       }
     }

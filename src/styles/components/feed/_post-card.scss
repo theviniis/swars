@@ -1,0 +1,12 @@
+.post-card {
+  @include flex(row, 1rem);
+  font-size: 15px;
+
+  &__content {
+    @include flex(column, 0.5rem);
+
+    .content__header {
+      @include flex(row, 0.5rem);
+    }
+  }
+}

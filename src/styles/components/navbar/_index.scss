@@ -1,10 +1,8 @@
 .nav {
   --padding: 0.5rem 1rem;
   --border-radius: 999px;
+  @include flex(column, 0.5rem);
 
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
   padding: 1rem;
   font-size: 1.25rem;
   height: 100vh;
@@ -22,13 +20,11 @@
   .logo:hover,
   &__item:hover,
   &__profile:hover {
-    @extend .hover;
+    @include hover(lighten);
   }
 
   &__list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    @include flex(column, 0.5rem);
   }
 
   &__item {
@@ -60,19 +56,8 @@
     }
 
     .profile__info {
-      display: flex;
-      flex-direction: column;
+      @include flex(column, 0);
       font-size: 15px;
-
-      .title {
-        font-weight: 700;
-        width: max-content;
-      }
-
-      .url {
-        font-weight: 300;
-        opacity: 0.8;
-      }
     }
 
     .see-more {

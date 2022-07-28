@@ -1,8 +1,8 @@
 import React from 'react';
 import { ReactComponent as Logo } from '../assets/logo.svg';
-import avatar from '../assets/avatar.png';
 import { ReactComponent as SeeMore } from '../assets/see-more.svg';
 import Avatar from './shared/Avatar';
+import { GlobalContext } from '../GlobalContext';
 
 const sections = [
   {
@@ -23,6 +23,7 @@ const sections = [
 ];
 
 const NavBar = () => {
+  const global = React.useContext(GlobalContext);
   return (
     <nav className='nav'>
       <Logo className='logo' />
@@ -35,10 +36,10 @@ const NavBar = () => {
         ))}
       </ul>
       <div className='nav__profile'>
-        <Avatar src={avatar} />
+        <Avatar />
         <div className='profile__info'>
-          <span className='title'>Storm Trooper</span>
-          <span className='url'>@stormtrooper</span>
+          <span className='user-name'>{`${global.firstName} ${global.lastName}`}</span>
+          <span className='user-url'>{global.url}</span>
         </div>
         <SeeMore />
       </div>
