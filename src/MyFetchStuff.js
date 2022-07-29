@@ -1,18 +1,7 @@
-const people = useFetch('https://swapi.dev/api/people/');
 const planets = useFetch('https://swapi.dev/api/planets/');
 const species = useFetch('https://swapi.dev/api/species/');
 
 <div className='App'>
-  <ul>
-    {people.response ? (
-      people.response.results.map((person) => (
-        <li key={person.name}>{person.name}</li>
-      ))
-    ) : (
-      <span>Loading...</span>
-    )}
-  </ul>
-
   <ul>
     {planets.response ? (
       planets.response.results.map((planet) => (

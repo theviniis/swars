@@ -1,29 +1,39 @@
 import React from 'react';
 import { GlobalContext } from '../../GlobalContext';
 import Avatar from '../shared/Avatar';
+import { ReactComponent as Like } from '../../assets/like.svg';
+import { ReactComponent as Comment } from '../../assets/comment.svg';
+import { ReactComponent as Share } from '../../assets/share.svg';
+import { ReactComponent as LikeFilled } from '../../assets/like-filled.svg';
 
-const PostCard = () => {
-  const global = React.useContext(GlobalContext);
+import BorderLine from '../shared/BorderLine';
+
+const PostCard = ({ firstName, lastName, url, avatar, description }) => {
+  const [isLiked, setIsLiked] = React.useState(false);
   return (
     <div className='post-card card'>
       <Avatar />
       <div className='post-card__content'>
         <div className='content__header'>
-          <span className='user-name'>{`${global.firstName} ${global.lastName}`}</span>
-          <span className='user-url'>{global.url}</span>
+          <a href='#teste' className='user-name'>
+            {`${firstName} ${lastName}`}
+          </a>
+          <a href='#teste' className='user-url'>
+            {url}
+          </a>
         </div>
-        <p className='content_desc'>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum
-          inventore dicta esse eos voluptas et commodi. Tenetur voluptatum
-          similique fuga odio maiores, praesentium molestiae placeat? Aspernatur
-          illum, quisquam at laudantium corporis nulla repellat, itaque sint
-          soluta non consectetur ut quos? Asperiores dolore veritatis eaque
-          provident in, sapiente aliquid! Exercitationem hic qui nobis,
-          asperiores eum consequatur vel sint dolores minus soluta
-        </p>
-        <ul className='controls__list'>
-          <li className='controls__item'>comments</li>
-          <li className='controls__item'>like</li>
+        <p className='content__desc'>{description}</p>
+        <BorderLine />
+        <ul className='content__controls'>
+          <li className='controls__item'>
+            <Share />
+          </li>
+          <li className='controls__item'>
+            <Comment />
+          </li>
+          <li className='controls__item' onClick={() => setIsLiked(!isLiked)}>
+            {isLiked ? <LikeFilled /> : <Like />}
+          </li>
         </ul>
       </div>
     </div>

@@ -4,9 +4,20 @@
 
   &__content {
     @include flex(column, 0.5rem);
+    width: 100%;
 
     .content__header {
       @include flex(row, 0.5rem);
+
+      .user-name:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .content__controls {
+      @include flex(row, 1rem);
+      justify-content: flex-end;
+      align-items: center;
     }
   }
 }

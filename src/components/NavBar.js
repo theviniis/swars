@@ -30,7 +30,7 @@ const NavBar = () => {
       <ul className='nav__list'>
         {sections.map((section) => (
           <li className='nav__item' key={section.name} url={section.url}>
-            <span className='material-icons icon'>{section.icon}</span>
+            <span className='material-icons nav-icon'>{section.icon}</span>
             <span className='section'>{section.name}</span>
           </li>
         ))}

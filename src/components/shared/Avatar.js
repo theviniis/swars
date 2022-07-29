@@ -1,7 +1,8 @@
+import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { GlobalContext } from '../../GlobalContext';
 
-const Avatar = () => {
+const Avatar = ({ url }) => {
   const global = React.useContext(GlobalContext);
   return (
     <img

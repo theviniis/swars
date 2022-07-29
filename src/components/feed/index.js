@@ -1,13 +1,23 @@
 import React from 'react';
 import NewPost from './NewPost';
 import PostCard from './PostCard';
+import PageTitle from '../shared/PageTitle';
+import posts from './posts';
 
 const Feed = () => {
   return (
     <div className='feed'>
-      <h2 className='page-title'>Home</h2>
+      <PageTitle>Home</PageTitle>
       <NewPost />
-      <PostCard />
+      {posts.map(({ firstName, lastName, url, avatar, description }) => (
+        <PostCard
+          firstName={firstName}
+          lastName={lastName}
+          url={url}
+          description={description}
+          avatar={avatar}
+        />
+      ))}
     </div>
   );
 };
