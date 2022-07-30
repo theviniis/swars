@@ -1,6 +1,6 @@
 //Theme scheme
-$color-bg: #000;
-$color-fg: #ffffff;
+$c-bg: #000;
+$c-fg: #ffffff;
 $c-primary: #1d9bf0;
 
 //RESET
@@ -34,10 +34,12 @@ html {
 
 body {
   text-rendering: optimizeSpeed;
-  background-color: $color-bg;
-  color: $color-fg;
+  background-color: $c-bg;
+  color: $c-fg;
   max-height: 100vh;
+  max-width: 80rem;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 a,
@@ -57,7 +59,7 @@ a:not([class]) {
   gap: $gap;
 }
 
-@mixin hover($hover, $color: $color-bg, $percent: 5%) {
+@mixin hover($hover, $color: $c-bg, $percent: 5%) {
   @if ($hover == 'darken') {
     background-color: darken($color, $percent);
   } @else {
@@ -66,8 +68,8 @@ a:not([class]) {
 }
 
 @media (prefers-color-scheme: light) {
-  $color-bg: #f2f2f2;
-  $color-fg: #000;
+  $c-bg: #f2f2f2;
+  $c-fg: #000;
   $content-bg: #fff;
 }
 
@@ -75,8 +77,8 @@ a:not([class]) {
 .grid-wrapper {
   display: grid;
   grid-template-columns: minmax(80px, max-content) minmax(340px, 1fr) minmax(
-      260px,
-      300px
+      300px,
+      340px
     );
   // height: 100vh;
 
@@ -86,7 +88,7 @@ a:not([class]) {
 }
 
 .card {
-  background-color: lighten($color-bg, 5%);
+  background-color: lighten($c-bg, 5%);
   padding: 1rem;
   border-radius: 1rem;
 }
@@ -109,6 +111,7 @@ a:not([class]) {
   box-sizing: initial;
   padding: 0.5rem;
   fill: $c-primary;
+  min-width: 1.5rem;
   width: 1.5rem;
   aspect-ratio: 1/1;
   cursor: pointer;

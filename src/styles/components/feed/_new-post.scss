@@ -14,7 +14,7 @@
       border: none;
       outline: none;
       resize: none;
-      color: $color-fg;
+      color: $c-fg;
       font-size: 1.25rem;
       @extend .transition;
 
@@ -35,6 +35,15 @@
     .form__controls {
       @include flex(row, 1rem);
       justify-content: flex-end;
+
+      svg {
+        width: 1.5rem;
+        border-radius: 0;
+
+        &:hover {
+          background-color: unset;
+        }
+      }
     }
   }
 }

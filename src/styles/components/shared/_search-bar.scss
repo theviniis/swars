@@ -1,0 +1,25 @@
+.search-bar {
+  display: flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 0.25rem 1rem;
+  border: 1px solid lighten($c-bg, 10%);
+  @extend .transition;
+  &:focus-within {
+    border: 1px solid $c-primary;
+  }
+
+  .icon {
+    padding: unset;
+    padding-block: 0.5rem;
+    &:hover {
+      background-color: unset;
+    }
+  }
+
+  input {
+    all: unset;
+    margin-inline: 1rem;
+    width: 100%;
+  }
+}

@@ -38,8 +38,8 @@ const NavBar = () => {
       <div className='nav__profile'>
         <Avatar />
         <div className='profile__info'>
-          <span className='user-name'>{`${global.firstName} ${global.lastName}`}</span>
-          <span className='user-url'>{global.url}</span>
+          <span className='user-name'>{`${global.user.firstName} ${global.user.lastName}`}</span>
+          <span className='user-url'>{global.user.url}</span>
         </div>
         <SeeMore />
       </div>

@@ -9,13 +9,13 @@ const Feed = () => {
     <div className='feed'>
       <PageTitle>Home</PageTitle>
       <NewPost />
-      {posts.map(({ firstName, lastName, url, avatar, description }) => (
+      {posts.map(({ name, url, avatar, description }, index) => (
         <PostCard
-          firstName={firstName}
-          lastName={lastName}
+          name={name}
           url={url}
           description={description}
           avatar={avatar}
+          key={`${name}-${index}`}
         />
       ))}
     </div>

@@ -8,7 +8,7 @@ import { ReactComponent as LikeFilled } from '../../assets/like-filled.svg';
 
 import BorderLine from '../shared/BorderLine';
 
-const PostCard = ({ firstName, lastName, url, avatar, description }) => {
+const PostCard = ({ name, url, avatar, description }) => {
   const [isLiked, setIsLiked] = React.useState(false);
   return (
     <div className='post-card card'>
@@ -16,7 +16,7 @@ const PostCard = ({ firstName, lastName, url, avatar, description }) => {
       <div className='post-card__content'>
         <div className='content__header'>
           <a href='#teste' className='user-name'>
-            {`${firstName} ${lastName}`}
+            {name}
           </a>
           <a href='#teste' className='user-url'>
             {url}
