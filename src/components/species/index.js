@@ -6,6 +6,8 @@ import Page from '../shared/Page';
 const Species = () => {
   const species = useFetch('https://swapi.dev/api/species/');
 
+  // console.log(species);
+
   return (
     <Page name='Species'>
       {species.response

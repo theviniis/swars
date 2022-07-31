@@ -1,8 +1,18 @@
 import React from 'react';
+import { useFetch } from '../../hooks/useFetch_v1';
 import Avatar from './Avatar';
 
 const AttrList = ({ data, avatar }) => {
   const [isActive, setIsActive] = React.useState(false);
+
+  const customFetch = async (url, index) => {
+    const response = await fetch(url);
+    // const json = await response.json();
+
+    const testUrl = url;
+    console.log(url);
+  };
+
   return (
     <div className={`attr-card ${isActive ? 'is-active' : ''}`}>
       <div className='attr-card__header' onClick={() => setIsActive(!isActive)}>
@@ -19,12 +29,13 @@ const AttrList = ({ data, avatar }) => {
                 <span className='att-desc'>{item.url}</span>
               </li>
             ) : (
-              <details open className='list__item'>
+              <details className='list__item'>
                 <summary className='att'>{item.name}: </summary>
                 {item.url
-                  ? item.url.map((item) => (
+                  ? item.url.map((item, index) => (
                       <div className='att-desc' key={item}>
-                        {item}
+                        {/* {item} */}
+                        {customFetch(item)}
                       </div>
                     ))
                   : null}
