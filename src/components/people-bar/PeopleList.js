@@ -19,6 +19,7 @@ function List({ input }) {
       {global.people.response
         ? global.people.response.results.map((item) => (
             <AttrList
+              key={item.name}
               avatar={true}
               data={[
                 {

@@ -1,18 +1,13 @@
 .nav {
   --padding: 0.5rem 1rem;
-  --border-radius: 999px;
   @include flex(column, 0.5rem);
   font-size: 1.25rem;
   height: 100vh;
 
-  .logo,
-  &__item,
-  &__profile {
-    padding: var(--padding);
-    border-radius: var(--border-radius);
-    cursor: pointer;
-
+  a {
     @extend .transition;
+    padding: var(--padding);
+    background-color: unset;
   }
 
   .logo:hover,
@@ -29,6 +24,7 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    @extend .card;
 
     .nav-icon {
       font-size: 28px;

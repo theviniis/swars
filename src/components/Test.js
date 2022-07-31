@@ -9,7 +9,6 @@ const list = [
 
 const Test = () => {
   const data = useFetch(list);
-  // console.log(data);
   return <div>Test</div>;
 };
 

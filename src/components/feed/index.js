@@ -1,7 +1,6 @@
 import React from 'react';
 import NewPost from './NewPost';
 import PostCard from './PostCard';
-import PageHeader from '../shared/PageHeader';
 import { GlobalContext } from '../../GlobalContext';
 import Page from '../shared/Page';
 

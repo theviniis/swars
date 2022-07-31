@@ -14,15 +14,18 @@
     font-weight: 700;
   }
 
-  .attr-card__list {
+  .attr-card__content {
     display: none;
     text-transform: capitalize;
 
     .list__item {
-      @include flex(row, 1rem);
-      justify-content: space-between;
-      padding: 0.5rem;
       border-radius: 0.5rem;
+
+      > * {
+        @include flex(row, 1rem);
+        justify-content: space-between;
+        padding: 0.5rem;
+      }
 
       .att {
         font-weight: 700;
@@ -43,7 +46,7 @@
   }
 
   &.is-active {
-    .attr-card__list {
+    .attr-card__content {
       display: block;
     }
     .icon {

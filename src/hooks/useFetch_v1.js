@@ -19,10 +19,7 @@ export const useFetch = (list, options) => {
         setLoading(false);
       }
     };
-    // console.log(list);
     list.forEach((item) => fetchData(item.url));
-    // list.forEach((item) => fetchData(item));
-    // list.url.forEach((item) => fetchData(item));
   }, [list, options]);
   return { response, error, loading: loading };
 };
