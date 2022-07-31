@@ -1,0 +1,49 @@
+.attr-card {
+  @extend .card;
+  @extend .transition;
+  @include flex(column, 1rem);
+
+  & + & {
+    margin-block-start: 1rem;
+  }
+
+  &__header {
+    @include flex(row, 1rem);
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+  }
+
+  .attr-card__list {
+    display: none;
+    text-transform: capitalize;
+
+    .list__item {
+      @include flex(row, 1rem);
+      justify-content: space-between;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+
+      .att {
+        font-weight: 700;
+      }
+
+      &:nth-child(2n + 1) {
+        background-color: lighten($c-bg, 15%);
+      }
+    }
+  }
+
+  .icon:hover {
+    background-color: unset;
+  }
+
+  &.is-active {
+    .attr-card__list {
+      display: block;
+    }
+    .icon {
+      transform: rotate(-90deg);
+    }
+  }
+}

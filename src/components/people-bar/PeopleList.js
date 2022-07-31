@@ -1,6 +1,6 @@
 import React from 'react';
 import { GlobalContext } from '../../GlobalContext';
-import PersonCard from './PersonCard';
+import AttrList from '../shared/AttrList';
 
 function List({ input }) {
   const global = React.useContext(GlobalContext);
@@ -15,30 +15,78 @@ function List({ input }) {
   });
 
   return (
-    <ul className='people-list'>
-      {filteredData.map((props) => (
-        <li key={props.name} className='people-list__item'>
-          <PersonCard
-            className='people-list'
-            birth_year={props.birth_year}
-            created={props.created}
-            edited={props.edited}
-            eye_color={props.eye_color}
-            films={props.films}
-            gender={props.gender}
-            hair_color={props.hair_color}
-            height={props.height}
-            homeworld={props.homeworld}
-            mass={props.mass}
-            name={props.name}
-            skin_color={props.skin_color}
-            species={props.species}
-            starships={props.starships}
-            vehicles={props.vehicles}
-          />
-        </li>
-      ))}
-    </ul>
+    <div className='people'>
+      {global.people.response
+        ? global.people.response.results.map((item) => (
+            <AttrList
+              avatar={true}
+              data={[
+                {
+                  name: 'name',
+                  url: item.name,
+                },
+                {
+                  name: 'birth_year',
+                  url: item.birth_year,
+                },
+                {
+                  name: 'created',
+                  url: item.created,
+                },
+                {
+                  name: 'edited',
+                  url: item.edited,
+                },
+                {
+                  name: 'eye_color',
+                  url: item.eye_color,
+                },
+
+                {
+                  name: 'gender',
+                  url: item.gender,
+                },
+                {
+                  name: 'hair_color',
+                  url: item.hair_color,
+                },
+                {
+                  name: 'height',
+                  url: item.height,
+                },
+                {
+                  name: 'homeworld',
+                  url: item.homeworld,
+                },
+                {
+                  name: 'mass',
+                  url: item.mass,
+                },
+                {
+                  name: 'skin_color',
+                  url: item.skin_color,
+                },
+                {
+                  name: 'films',
+                  url: item.films,
+                },
+                {
+                  name: 'species',
+                  url: item.species,
+                },
+                {
+                  name: 'starships',
+                  url: item.starships,
+                },
+                {
+                  name: 'vehicles',
+                  url: item.vehicles,
+                },
+              ]}
+            />
+          ))
+        : null}
+    </div>
   );
 }
 

@@ -1,20 +1,11 @@
 @import 'new-post';
 @import 'post-card';
 
-.page-title {
-  font-size: 20px;
-  font-weight: 700;
-  padding-block: 0.5rem;
-}
-
 .feed {
-  @include flex(column, 1rem);
   border-left: 1px solid lighten($c-bg, 10%);
   border-right: 1px solid lighten($c-bg, 10%);
-  height: 100vh;
-  overflow-y: scroll;
 
-  &::-webkit-scrollbar {
-    display: none;
+  &__content {
+    @include flex(column, 1rem);
   }
 }

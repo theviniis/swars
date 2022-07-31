@@ -1,7 +1,8 @@
 //Theme scheme
 $c-bg: #000;
 $c-fg: #ffffff;
-$c-primary: #1d9bf0;
+$c-primary: #fee123;
+$page-header-height: 46px;
 
 //RESET
 * {
@@ -76,14 +77,18 @@ a:not([class]) {
 //Global Styles
 .grid-wrapper {
   display: grid;
-  grid-template-columns: minmax(80px, max-content) minmax(340px, 1fr) minmax(
+  grid-template-columns: minmax(60px, max-content) minmax(340px, 1fr) minmax(
       300px,
       340px
     );
-  // height: 100vh;
 
   & > * {
     padding: 1rem;
+  }
+
+  @media (max-width: 900px) {
+    // display: none;
+    grid-template-columns: minmax(80px, max-content) minmax(340px, 1fr);
   }
 }
 
@@ -91,6 +96,10 @@ a:not([class]) {
   background-color: lighten($c-bg, 5%);
   padding: 1rem;
   border-radius: 1rem;
+
+  &:hover {
+    background-color: lighten($c-bg, 7%);
+  }
 }
 
 .user-name {

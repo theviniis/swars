@@ -1,4 +1,12 @@
-.people-list {
+.people-bar {
+  @include flex(column, 1rem);
+
+  @media (max-width: 900px) {
+    display: none;
+  }
+}
+
+.people {
   max-height: 100vh;
   overflow-y: scroll;
 

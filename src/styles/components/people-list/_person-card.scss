@@ -1,13 +1,9 @@
 .person-card {
-  border-radius: 9999px;
   cursor: pointer;
   font-weight: 700;
+
   @extend .transition;
   @extend .card;
-
-  &:hover {
-    @include hover(darken, $c-primary, 0%);
-  }
 
   &__header {
     justify-content: space-between;
@@ -29,41 +25,33 @@
 
   &__content {
     display: none;
-    padding-block: 1rem;
     @extend .transition;
 
     .person {
       display: flex;
       justify-content: space-between;
       text-transform: capitalize;
+      overflow: hidden;
+      font-size: 16px;
 
-      .person-att {
-        font-size: 16px;
-      }
       .person-att-desc {
         font-weight: 400;
-        font-size: 15px;
-        // width: min-content;
       }
     }
   }
 
   &.is-active {
-    @include flex(column, 0.5rem);
-    border-radius: 1rem;
+    @include flex(column, 1rem);
 
-    &:hover {
-      @include hover(lighten, $c-bg, 5%);
-    }
-
-    .person-card__header {
-      .icon {
-        transform: rotate(-90deg);
+    .person-card {
+      &__header {
+        .icon {
+          transform: rotate(-90deg);
+        }
       }
-    }
-
-    .person-card__content {
-      display: block;
+      &__content {
+        @include flex(column, 0.25rem);
+      }
     }
   }
 }

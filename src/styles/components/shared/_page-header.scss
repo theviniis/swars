@@ -1,0 +1,11 @@
+.page-header__title {
+  font-size: 20px;
+  font-weight: 700;
+  padding-block: 0.5rem;
+  position: fixed;
+  top: 0;
+  height: $page-header-height;
+  background-color: $c-bg;
+  z-index: 10;
+  max-width: 940px;
+}

@@ -1,0 +1,20 @@
+.page__title {
+  position: fixed;
+  padding-block: 1rem 0.5rem;
+  width: 628px;
+  height: $page-header-height;
+  top: 0;
+
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.page__content {
+  margin-top: $page-header-height;
+  max-height: 100vh;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

@@ -1,15 +1,17 @@
 import React from 'react';
 import NewPost from './NewPost';
 import PostCard from './PostCard';
-import PageTitle from '../shared/PageTitle';
-import posts from './posts';
+import PageHeader from '../shared/PageHeader';
+import { GlobalContext } from '../../GlobalContext';
+import Page from '../shared/Page';
 
 const Feed = () => {
+  const global = React.useContext(GlobalContext);
+
   return (
-    <div className='feed'>
-      <PageTitle>Home</PageTitle>
+    <Page name='Feed'>
       <NewPost />
-      {posts.map(({ name, url, avatar, description }, index) => (
+      {global.posts.map(({ name, url, avatar, description }, index) => (
         <PostCard
           name={name}
           url={url}
@@ -18,7 +20,7 @@ const Feed = () => {
           key={`${name}-${index}`}
         />
       ))}
-    </div>
+    </Page>
   );
 };
 

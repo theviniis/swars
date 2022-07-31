@@ -4,13 +4,66 @@ import Avatar from '../shared/Avatar';
 
 const PersonCard = (props) => {
   const [isActive, setIsActive] = React.useState(false);
-
-  const handleClick = (e) => {
-    e.preventDefault();
-    return setIsActive(!isActive);
-  };
-
   const homeworld = useFetch(props.homeworld);
+
+  const data = [
+    {
+      name: 'Birth Year',
+      url: props.birth_year,
+    },
+    {
+      name: 'Gender',
+      url: props.Gender,
+    },
+    {
+      name: 'Eye Color',
+      url: props.eye_color,
+    },
+    {
+      name: 'Hair Color',
+      url: props.hair_color,
+    },
+    {
+      name: 'Height',
+      url: props.height,
+    },
+    {
+      name: 'Homeworld',
+      url: homeworld.response ? homeworld.response.name : '',
+    },
+    {
+      name: 'Mass',
+      url: props.mass,
+    },
+    {
+      name: 'Skin Color',
+      url: props.skin_color,
+    },
+    {
+      name: 'Created',
+      url: props.created,
+    },
+    {
+      name: 'Edited',
+      url: props.edited,
+    },
+    {
+      name: 'Films',
+      url: props.films,
+    },
+    {
+      name: 'Species',
+      url: props.species,
+    },
+    {
+      name: 'Vehicles',
+      url: props.vehicles,
+    },
+    {
+      name: 'Starships',
+      url: props.starships,
+    },
+  ];
 
   return (
     <div
@@ -18,7 +71,10 @@ const PersonCard = (props) => {
         props.className
       } `}
     >
-      <div className='person-card__header' onClick={handleClick}>
+      <div
+        className='person-card__header'
+        onClick={() => setIsActive(!isActive)}
+      >
         <div>
           <Avatar />
           <span>{props.name}</span>
@@ -26,86 +82,33 @@ const PersonCard = (props) => {
         <span className='material-icons icon'>expand_more</span>
       </div>
 
-      <div className='person-card__content'>
-        <div className='person'>
-          <span className='person-att'>Birth Year: </span>
-          <span className='person-att-desc'>{props.birth_year}</span>
-        </div>
-        <div className='person'>
-          <span className='person-att'>Gender: </span>
-          <span className='person-att-desc'>{props.gender}</span>
-        </div>
-
-        <div className='person'>
-          <span className='person-att'>Eye Color: </span>
-          <span className='person-att-desc'>{props.eye_color}</span>
-        </div>
-        <div className='person'>
-          <span className='person-att'>Hair Color: </span>
-          <span className='person-att-desc'>{props.hair_color}</span>
-        </div>
-        <div className='person'>
-          <span className='person-att'>Height: </span>
-          <span className='person-att-desc'>{props.height}</span>
-        </div>
-        <div className='person'>
-          <span className='person-att'>Homeworld: </span>
-          <span className='person-att-desc'>
-            {homeworld.response ? homeworld.response.name : ''}
-          </span>
-        </div>
-        <div className='person'>
-          <span className='person-att'>Mass: </span>
-          <span className='person-att-desc'>{props.mass}</span>
-        </div>
-        <div className='person'>
-          <span className='person-att'>Skin Color: </span>
-          <span className='person-att-desc'>{props.skin_color}</span>
-        </div>
-        <div className='person'>
-          <span className='person-att'>Created: </span>
-          <span className='person-att-desc'>{props.created}</span>
-        </div>
-        <div className='person'>
-          <span className='person-att'>Edited: </span>
-          <span className='person-att-desc'>{props.edited}</span>
-        </div>
-        <div className='person'>
-          <details open>
-            <summary className='person-att'>Films</summary>
+      <ul className='person-card__content'>
+        <li>
+          {data.map((att) => (
             <>
-              {console.log(props.films)}
-              {props.films.map((film) => (
-                <span className='person-att-desc'>{film}</span>
-              ))}
+              {typeof att.url === 'string' ? (
+                <div>
+                  <span>{att.name}: </span>
+                  <span>{att.url}</span>
+                </div>
+              ) : (
+                <div>
+                  <details open>
+                    <summary className='att'>{att.name}</summary>
+                    {att.url
+                      ? att.url.map((item) => (
+                          <div className='att-desc' key={item}>
+                            {item}
+                          </div>
+                        ))
+                      : null}
+                  </details>
+                </div>
+              )}
             </>
-          </details>
-        </div>
-        <div className='person'>
-          <details open>
-            <summary className='person-att'>Species</summary>
-            {props.species.map((specie) => (
-              <span className='person-att-desc'>{specie}</span>
-            ))}
-          </details>
-        </div>
-        <div className='person'>
-          <details open>
-            <summary className='person-att'>Vehicles</summary>
-            {props.starships.map((starship) => (
-              <span className='person-att-desc'>{starship}</span>
-            ))}
-          </details>
-        </div>
-        <div className='person'>
-          <details open>
-            <summary className='person-att'>Starships</summary>
-            {props.vehicles.map((vehicle) => (
-              <span className='person-att-desc'>{vehicle}</span>
-            ))}
-          </details>
-        </div>
-      </div>
+          ))}
+        </li>
+      </ul>
     </div>
   );
 };
