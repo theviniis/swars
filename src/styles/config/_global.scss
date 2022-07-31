@@ -78,8 +78,8 @@ a:not([class]) {
 .grid-wrapper {
   display: grid;
   grid-template-columns: minmax(60px, max-content) minmax(340px, 1fr) minmax(
-      300px,
-      340px
+      280px,
+      400px
     );
 
   & > * {
@@ -87,7 +87,6 @@ a:not([class]) {
   }
 
   @media (max-width: 900px) {
-    // display: none;
     grid-template-columns: minmax(80px, max-content) minmax(340px, 1fr);
   }
 }
