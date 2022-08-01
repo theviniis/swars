@@ -1,24 +1,18 @@
 import React from 'react';
 import { GlobalContext } from '../../GlobalContext';
 import AttrList from '../shared/AttrList';
+import useGetAllData from '../../hooks/getAllData';
 
 function List({ input }) {
-  const global = React.useContext(GlobalContext);
-  const people = global.allData[0] ? global.allData[0].data.results : [];
+  const { data } = useGetAllData('https://swapi.dev/api/people');
 
-  const filteredData = people.filter((el) => {
-    if (input === '') {
-      return el;
-    } else {
-      return el.name.toLowerCase().includes(input);
-    }
-  });
+  const people = data ? data : [];
 
   return (
     <div className={`people ${global.isMobile ? 'mobile' : ''}`}>
-      {people.map((item) => (
+      {people.map((item, index) => (
         <AttrList
-          key={item.name}
+          key={(item.name, index)}
           avatar={true}
           data={[
             {
