@@ -13,7 +13,7 @@ const Details = ({ name, url }) => {
   };
 
   React.useEffect(() => {
-    fetchData();
+    // fetchData();
   }, []);
 
   return (

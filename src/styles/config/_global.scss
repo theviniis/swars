@@ -98,7 +98,7 @@ a:not([class]) {
   }
 
   @media (max-width: 900px) {
-    grid-template-columns: minmax(80px, max-content) minmax(340px, 1fr);
+    grid-template-columns: min-content minmax(340px, 1fr);
   }
 }
 
