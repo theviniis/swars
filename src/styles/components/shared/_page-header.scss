@@ -1,11 +1,26 @@
 .page-header__title {
-  font-size: 20px;
-  font-weight: 700;
-  padding-block: 0.5rem;
-  position: fixed;
+  @include flex(row, 1rem);
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
   top: 0;
-  height: $page-header-height;
-  background-color: $c-bg;
+  left: 0;
   z-index: 10;
-  max-width: 940px;
+  position: relative;
+
+  a {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .icon {
+    display: none;
+    &:hover {
+      color: $c-primary;
+    }
+
+    @media (max-width: 900px) {
+      display: initial;
+    }
+  }
 }

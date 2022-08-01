@@ -2,14 +2,15 @@
 $c-bg: #000;
 $c-fg: #ffffff;
 $c-primary: #fee123;
-$page-header-height: 46px;
+$page-header-height: 2.875rem;
+$max-width: 80rem;
+$f-family: 'Open-sans', sans-serif;
 
 //RESET
 * {
   margin: 0;
   padding: 0;
   font-family: inherit;
-  font-size: inherit;
   line-height: inherit;
 }
 
@@ -33,14 +34,20 @@ html {
   scroll-behavior: smooth;
 }
 
+button {
+  font-size: inherit;
+  font-family: inherit;
+}
+
 body {
   text-rendering: optimizeSpeed;
   background-color: $c-bg;
   color: $c-fg;
   max-height: 100vh;
-  max-width: 80rem;
+  max-width: $max-width;
   overflow: hidden;
   margin: 0 auto;
+  line-height: 1.5;
 }
 
 a,
@@ -128,10 +135,10 @@ a:not([class]) {
   aspect-ratio: 1/1;
   cursor: pointer;
   border-radius: 50%;
-
   @extend .transition;
+}
 
-  &:hover {
-    @include hover(darken, $c-primary, 45%);
-  }
+.google-icon {
+  font-size: 28px;
+  @extend .transition;
 }

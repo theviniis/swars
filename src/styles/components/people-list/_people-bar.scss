@@ -2,7 +2,9 @@
   @include flex(column, 1rem);
 
   @media (max-width: 900px) {
-    display: none;
+    // display: none;
+    opacity: 0;
+    transform: translateX(100%);
   }
 }
 

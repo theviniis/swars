@@ -6,7 +6,10 @@ export const GlobalContext = React.createContext();
 
 export const GlobalStorage = ({ children }) => {
   const [posts, setPosts] = React.useState(postsList);
+  const [mobile, seMobile] = React.useState(false);
+
   const allData = useFetch(requestList);
+
   return (
     <GlobalContext.Provider value={{ user, posts, setPosts, allData }}>
       {children}

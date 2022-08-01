@@ -19,7 +19,7 @@ const AttrList = ({ data, avatar }) => {
       <div className='attr-card__header' onClick={handleToggle}>
         {avatar ? <Avatar /> : null}
         <span>{data[0].url}</span>
-        <span className='material-icons icon'>expand_more</span>
+        <span className='material-symbols-outlined'>expand_more</span>
       </div>
       {/* card content */}
       <ul className='attr-card__content'>

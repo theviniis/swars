@@ -28,7 +28,9 @@ const NavList = () => {
           className='nav__item'
           key={section.name}
         >
-          <span className='material-icons nav-icon'>{section.icon}</span>
+          <span className='material-symbols-outlined google-icon'>
+            {section.icon}
+          </span>
           <span className='section'>{section.name}</span>
         </NavLink>
       ))}

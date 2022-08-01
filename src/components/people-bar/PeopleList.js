@@ -5,6 +5,8 @@ import AttrList from '../shared/AttrList';
 function List({ input }) {
   const global = React.useContext(GlobalContext);
 
+  const isNarrowScreen = window.matchMedia('(max-width: 900px)').matches;
+
   const people = global.allData[0] ? global.allData[0].data.results : [];
 
   const filteredData = people.filter((el) => {
