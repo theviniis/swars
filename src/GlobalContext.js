@@ -5,15 +5,20 @@ import { useFetch } from './hooks/useFetch';
 export const GlobalContext = React.createContext();
 
 export const GlobalStorage = ({ children }) => {
-  const people = useFetch('https://swapi.dev/api/people/');
   const [posts, setPosts] = React.useState(postsList);
-
+  const allData = useFetch(requestList);
   return (
-    <GlobalContext.Provider value={{ user, people, posts, setPosts }}>
+    <GlobalContext.Provider value={{ user, posts, setPosts, allData }}>
       {children}
     </GlobalContext.Provider>
   );
 };
+
+const requestList = [
+  'https://swapi.dev/api/people/',
+  'https://swapi.dev/api/planets/',
+  'https://swapi.dev/api/species/',
+];
 
 const user = {
   name: 'Storm Trooper',

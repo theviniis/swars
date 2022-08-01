@@ -1,5 +1,6 @@
 import React from 'react';
 import Avatar from './Avatar';
+import Details from './Details';
 
 const AttrList = ({ data, avatar }) => {
   //Receives an [{ name, url}] array
@@ -33,10 +34,7 @@ const AttrList = ({ data, avatar }) => {
               </div>
             ) : (
               // if isnt a string, generates a details tag
-              <details>
-                <summary className='att'>{item.name}: </summary>
-                {item.url}
-              </details>
+              <Details name={item.name} url={item.url} />
             )}
           </li>
         ))}
