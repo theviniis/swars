@@ -5,26 +5,26 @@ const useGetAllData = (requestUrl) => {
   const [error, setError] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
 
-  const fetchData = async (url) => {
-    try {
-      setLoading(true);
-      const res = await fetch(url);
-      const json = await res.json();
-      if (json.next) {
-        fetchData(json.next);
+  React.useMemo(() => {
+    const fetchData = async (url) => {
+      try {
+        setLoading(true);
+        const res = await fetch(url);
+        const json = await res.json();
         setData((currentList) => [...currentList, ...json.results]);
+        if (json.next) {
+          fetchData(json.next);
+        }
+      } catch (err) {
+        setError(err);
+        throw new Error(err);
+      } finally {
+        setLoading(false);
       }
-    } catch (err) {
-      setError(err);
-    } finally {
-      setLoading(false);
-    }
-  };
+    };
 
-  React.useEffect(() => {
     fetchData(requestUrl);
-  }, []);
-
+  }, [requestUrl]);
   return { data, error, loading };
 };
 
