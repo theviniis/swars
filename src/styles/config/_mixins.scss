@@ -7,13 +7,7 @@
 @mixin hover($hover, $color: $c-bg, $percent: 5%) {
   @if ($hover == 'darken') {
     background-color: darken($color, $percent);
-  } @else {
+  } @else if($hover == 'lighten') {
     background-color: lighten($color, $percent);
   }
-}
-
-@media (prefers-color-scheme: light) {
-  $c-bg: #f2f2f2;
-  $c-fg: #000;
-  $content-bg: #fff;
 }
