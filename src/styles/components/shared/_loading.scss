@@ -1,0 +1,43 @@
+.loading {
+  @extend .card;
+  width: 100%;
+
+  .spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding-block: 0.25rem;
+
+    & span {
+      width: 12px;
+      height: 12px;
+      border-radius: 100%;
+      background-color: $c-primary;
+      opacity: 0;
+    }
+
+    & span:nth-child(1) {
+      animation: fade 1s ease-in-out infinite;
+    }
+
+    & span:nth-child(2) {
+      animation: fade 1s ease-in-out 0.33s infinite;
+    }
+
+    & span:nth-child(3) {
+      animation: fade 1s ease-in-out 0.66s infinite;
+    }
+
+    @keyframes fade {
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      60% {
+        opacity: 0;
+      }
+    }
+  }
+}

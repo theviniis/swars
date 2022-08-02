@@ -5,14 +5,13 @@ const Details = ({ name, url }) => {
   const [allData, setAllData] = React.useState([]);
 
   React.useMemo(() => {
-    const fetchData = () => {
-      url &&
-        axios
-          .all(url.map((item) => axios.get(item)))
-          .then((data) => setAllData(data));
-    };
-
-    fetchData();
+    // const fetchData = () => {
+    //   url &&
+    //     axios
+    //       .all(url.map((item) => axios.get(item)))
+    //       .then((data) => setAllData(data));
+    // };
+    // fetchData();
   }, [url]);
 
   return (

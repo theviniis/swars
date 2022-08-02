@@ -15,6 +15,7 @@
 
   .icon {
     display: none;
+    &.is-active,
     &:hover {
       color: $c-primary;
     }

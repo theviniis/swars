@@ -1,25 +1,29 @@
 import React from 'react';
 import avatar from './assets/avatar.png';
-import { useFetch } from './hooks/useFetch';
+import useMedia from './hooks/useMedia';
 
 export const GlobalContext = React.createContext();
 
 export const GlobalStorage = ({ children }) => {
   const [posts, setPosts] = React.useState(postsList);
-  const allData = useFetch(requestList);
+  const mobile = useMedia('(max-width: 900px)');
+  const [isNavBarVisible, setIsNavBarVisible] = React.useState(false);
 
   return (
-    <GlobalContext.Provider value={{ user, posts, setPosts, allData }}>
+    <GlobalContext.Provider
+      value={{
+        user,
+        posts,
+        setPosts,
+        mobile,
+        isNavBarVisible,
+        setIsNavBarVisible,
+      }}
+    >
       {children}
     </GlobalContext.Provider>
   );
 };
-
-const requestList = [
-  'https://swapi.dev/api/people/',
-  'https://swapi.dev/api/planets/',
-  'https://swapi.dev/api/species/',
-];
 
 const user = {
   name: 'Storm Trooper',

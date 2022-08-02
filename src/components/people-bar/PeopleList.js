@@ -1,9 +1,10 @@
 import React from 'react';
 import AttrList from '../shared/AttrList';
 import useGetAllData from '../../hooks/useGetAllData';
+import Loading from '../shared/Loading';
 
 function List({ input }) {
-  const { data } = useGetAllData('https://swapi.dev/api/people');
+  const { data, isLoading } = useGetAllData('https://swapi.dev/api/people');
 
   const filteredData = data.filter((li) => {
     if (input === '') {
@@ -14,8 +15,8 @@ function List({ input }) {
   });
 
   return (
-    <div className={`people ${global.isMobile ? 'mobile' : ''}`}>
-      {data &&
+    <div className={'people'}>
+      {data && !isLoading ? (
         filteredData.map((item, index) => (
           <AttrList
             key={(item.name, index)}
@@ -84,7 +85,10 @@ function List({ input }) {
               },
             ]}
           />
-        ))}
+        ))
+      ) : (
+        <Loading />
+      )}
     </div>
   );
 }
