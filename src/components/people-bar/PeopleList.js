@@ -1,6 +1,6 @@
 import React from 'react';
 import AttrList from '../shared/AttrList';
-import useGetAllData from '../../hooks/getAllData';
+import useGetAllData from '../../hooks/useGetAllData';
 
 function List({ input }) {
   const { data } = useGetAllData('https://swapi.dev/api/people');

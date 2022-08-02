@@ -14,8 +14,8 @@ function App() {
         <NavBar />
         <Routes>
           <Route path='/' element={<Feed />} />
-          {/* <Route path='worlds' element={<Worlds />} /> */}
-          {/* <Route path='species' element={<Species />} /> */}
+          <Route path='worlds' element={<Worlds />} />
+          <Route path='species' element={<Species />} />
         </Routes>
         <PeopleBar />
       </div>
