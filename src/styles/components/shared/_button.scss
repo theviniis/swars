@@ -11,6 +11,6 @@
   @extend .transition;
 
   &:hover {
-    box-shadow: darken($c-primary, 10%) 999em 0px 0px 0px inset;
+    box-shadow: darken($c-primary, 20%) 999em 0px 0px 0px inset;
   }
 }

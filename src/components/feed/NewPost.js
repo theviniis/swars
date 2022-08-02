@@ -6,19 +6,25 @@ import BorderLine from '../shared/BorderLine';
 import Button from '../shared/Button';
 
 const NewPost = () => {
-  const global = React.useContext(GlobalContext);
+  const { user, avatar, posts, setPosts } = React.useContext(GlobalContext);
+  //calls props from global context
   const [inputText, setInputText] = React.useState('');
+  //input state for textarea
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    return global.setPosts([
+    if (!inputText.length) return;
+    //check if the input are empty then return
+    return setPosts([
+      // post a new post passing an object
       {
-        name: 'Storm Trooper',
-        url: '@stormtrooper',
-        avatar: global.avatar,
+        name: user.name,
+        url: user.url,
+        avatar: avatar,
         description: inputText,
       },
-      ...global.posts,
+      ...posts,
+      //spread the posts of posts state
     ]);
   };
 
@@ -29,12 +35,12 @@ const NewPost = () => {
         <textarea
           name=''
           id=''
-          placeholder='O que está acontecendo?'
+          placeholder='What is happening?'
           cols='1'
           rows='2'
+          maxLength='130'
           onChange={(e) => setInputText(e.target.value)}
         ></textarea>
-
         <BorderLine />
         <div className='form__controls'>
           <UploadImg className='icon' />

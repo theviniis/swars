@@ -4,6 +4,7 @@ import { GlobalContext } from '../../GlobalContext';
 const PageHeader = ({ children }) => {
   const { isNavBarVisible, setIsNavBarVisible } =
     React.useContext(GlobalContext);
+  // calls navbar visibility state from global context
 
   return (
     <div className='page-header__title'>
@@ -13,6 +14,7 @@ const PageHeader = ({ children }) => {
           isNavBarVisible ? 'is-active' : ''
         }`}
         onClick={() => setIsNavBarVisible(!isNavBarVisible)}
+        // handle click toggling navbar visibility state
       >
         chat
       </span>

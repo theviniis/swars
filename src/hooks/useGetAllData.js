@@ -1,6 +1,7 @@
 import React from 'react';
 
-const useGetAllData = (requestUrl) => {
+const useGetAllData = (request, options) => {
+  //receives a request and option to fetch data
   const [data, setData] = React.useState([]);
   const [hasError, setHasError] = React.useState(null);
   const [isLoading, setIsLoading] = React.useState(false);
@@ -9,20 +10,27 @@ const useGetAllData = (requestUrl) => {
     const fetchData = async (url) => {
       try {
         setIsLoading(true);
-        const res = await fetch(url);
+        //set loading state true
+        const res = await fetch(url, options);
         const json = await res.json();
+        //fetch things and applies .json() method
         setData((currentList) => [...currentList, ...json.results]);
+        //spread current list and results in data state
         if (json.next) fetchData(json.next);
+        //checks if there is a json.next, if is, fetch the data again until return null
       } catch (err) {
         setHasError(err);
+        //set error state if error
         throw new Error(err);
       } finally {
         setIsLoading(false);
+        //set loading state to false
       }
     };
 
-    fetchData(requestUrl);
-  }, [requestUrl]);
+    fetchData(request);
+    //calls the function passint the request
+  }, [request, options]);
   return { data, hasError, isLoading };
 };
 

@@ -5,12 +5,14 @@ import { GlobalContext } from '../../GlobalContext';
 import Page from '../shared/Page';
 
 const Feed = () => {
-  const global = React.useContext(GlobalContext);
+  const { posts } = React.useContext(GlobalContext);
+  //calls posts from global contex
 
   return (
     <Page name='Feed'>
       <NewPost />
-      {global.posts.map(({ name, url, avatar, description }, index) => (
+      {posts.map(({ name, url, avatar, description }, index) => (
+        // render each post passing props
         <PostCard
           name={name}
           url={url}

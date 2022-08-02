@@ -1,0 +1,19 @@
+@mixin flex($direction: row, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+@mixin hover($hover, $color: $c-bg, $percent: 5%) {
+  @if ($hover == 'darken') {
+    background-color: darken($color, $percent);
+  } @else {
+    background-color: lighten($color, $percent);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  $c-bg: #f2f2f2;
+  $c-fg: #000;
+  $content-bg: #fff;
+}

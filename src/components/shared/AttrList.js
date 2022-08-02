@@ -5,6 +5,7 @@ import Details from './Details';
 const AttrList = ({ data, avatar }) => {
   //Receives an [{ name, url}] array
   const [isActive, setIsActive] = React.useState(false);
+  // defines state to expand the atributes card
 
   // Toggle Handler
   const handleToggle = (e) => {
@@ -33,7 +34,7 @@ const AttrList = ({ data, avatar }) => {
                 <span className='att-desc'>{item.url}</span>
               </div>
             ) : (
-              // if isnt a string, generates a details tag
+              // if isnt a string, generates a details tag passing an array of urls
               <Details name={item.name} url={item.url} />
             )}
           </li>

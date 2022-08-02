@@ -23,6 +23,7 @@ const NavList = () => {
   return (
     <ul className='nav__list'>
       {sections.map((section) => (
+        //maps sections redering each section passing the object params
         <NavLink
           to={section.url.toLowerCase()}
           className='nav__item'

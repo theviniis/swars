@@ -6,8 +6,11 @@ export const GlobalContext = React.createContext();
 
 export const GlobalStorage = ({ children }) => {
   const [posts, setPosts] = React.useState(postsList);
+  //set posts state with postsList object
   const mobile = useMedia('(max-width: 900px)');
+  //calls useMedia custom hook passing a media query param
   const [isNavBarVisible, setIsNavBarVisible] = React.useState(false);
+  //set an global state for NavBar visibility
 
   return (
     <GlobalContext.Provider

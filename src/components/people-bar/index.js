@@ -5,8 +5,9 @@ import PeopleList from './PeopleList';
 
 const PeopleBar = () => {
   const [inputText, setInputText] = React.useState('');
-  const { mobile } = React.useContext(GlobalContext);
-  const { isNavBarVisible } = React.useContext(GlobalContext);
+  //input state for search-bar
+  const { mobile, isNavBarVisible } = React.useContext(GlobalContext);
+  //cals mobile state and nav-bar visibility state from global context
   return (
     <div
       className={`people-bar ${mobile ? 'mobile' : ''} ${
@@ -16,6 +17,7 @@ const PeopleBar = () => {
       <div>
         <SearchBar inputText={inputText} setInputText={setInputText} />
         <PeopleList input={inputText} />
+        {/* calls both components passing inputText state for filtering data */}
       </div>
     </div>
   );

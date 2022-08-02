@@ -1,5 +1,4 @@
 import React from 'react';
-import { GlobalContext } from '../../GlobalContext';
 import Avatar from '../shared/Avatar';
 import { ReactComponent as Like } from '../../assets/like.svg';
 import { ReactComponent as Comment } from '../../assets/comment.svg';
@@ -8,8 +7,9 @@ import { ReactComponent as LikeFilled } from '../../assets/like-filled.svg';
 
 import BorderLine from '../shared/BorderLine';
 
-const PostCard = ({ name, url, avatar, description }) => {
+const PostCard = ({ name, url, description }) => {
   const [isLiked, setIsLiked] = React.useState(false);
+  //set post like state
   return (
     <div className='post-card card'>
       <Avatar />
@@ -32,7 +32,10 @@ const PostCard = ({ name, url, avatar, description }) => {
             <Comment />
           </li>
           <li className='controls__item' onClick={() => setIsLiked(!isLiked)}>
-            {isLiked ? <LikeFilled /> : <Like />}
+            {
+              //toggle liked state
+              isLiked ? <LikeFilled /> : <Like />
+            }
           </li>
         </ul>
       </div>

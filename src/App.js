@@ -6,7 +6,6 @@ import './styles/application.scss';
 import PeopleBar from './components/people-bar';
 import Worlds from './components/worlds';
 import Species from './components/species';
-import Test from './Test';
 
 function App() {
   return (
@@ -17,7 +16,6 @@ function App() {
           <Route path='/' element={<Feed />} />
           <Route path='worlds' element={<Worlds />} />
           <Route path='species' element={<Species />} />
-          <Route path='test' element={<Test />} />
         </Routes>
         <PeopleBar />
       </div>

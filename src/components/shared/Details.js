@@ -2,14 +2,18 @@ import React from 'react';
 import axios from 'axios';
 
 const Details = ({ name, url }) => {
-  const [allData, setAllData] = React.useState([]);
+  // recives an name for summary tag and an url with urls
+  const [data, setData] = React.useState([]);
+  // data states
 
   React.useMemo(() => {
+    // calls memo to run function once
     const fetchData = () => {
       url &&
         axios
           .all(url.map((item) => axios.get(item)))
-          .then((data) => setAllData(data));
+          .then((data) => setData(data));
+      // use axios to fetch each url and spread data in data state
     };
     fetchData();
   }, [url]);
@@ -17,8 +21,9 @@ const Details = ({ name, url }) => {
   return (
     <details>
       <summary className='att'>{name}: </summary>
-      {allData &&
-        allData.map((item) => (
+      {data &&
+        data.map((item) => (
+          // for each data render a span with the props
           <span key={item.data.name ? item.data.name : item.data.title}>
             {item.data.name ? item.data.name : item.data.title}
           </span>

@@ -1,6 +1,6 @@
 .post-card {
   @include flex(row, 1rem);
-  font-size: 15px;
+  font-size: 0.9375rem;
 
   &__content {
     @include flex(column, 0.5rem);
