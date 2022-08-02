@@ -1,15 +1,14 @@
 import React from 'react';
-import { GlobalContext } from '../../GlobalContext';
+import useGetAllData from '../../hooks/useGetAllData';
 import AttrList from '../shared/AttrList';
 import Page from '../shared/Page';
 
 const Species = () => {
-  const global = React.useContext(GlobalContext);
-  const species = global.allData[2] ? global.allData[2].data.results : [];
+  const { data } = useGetAllData('https://swapi.dev/api/species/');
 
   return (
     <Page name='Species'>
-      {species.map((specie) => (
+      {data.map((specie) => (
         <AttrList
           key={specie.name}
           data={[
