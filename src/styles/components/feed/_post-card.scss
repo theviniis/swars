@@ -8,6 +8,7 @@
 
     .content__header {
       @include flex(row, 0.5rem);
+      flex-wrap: wrap;
 
       .user-name:hover {
         text-decoration: underline;

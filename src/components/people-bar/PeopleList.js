@@ -27,8 +27,24 @@ function List({ input }) {
                 url: item.name,
               },
               {
-                name: 'birth_year',
+                name: 'gender',
+                url: item.gender,
+              },
+              {
+                name: 'birth year',
                 url: item.birth_year,
+              },
+              {
+                name: 'eye color',
+                url: item.eye_color,
+              },
+              {
+                name: 'hair color',
+                url: item.hair_color,
+              },
+              {
+                name: 'height',
+                url: item.height,
               },
               {
                 name: 'created',
@@ -39,23 +55,6 @@ function List({ input }) {
                 url: item.edited,
               },
               {
-                name: 'eye_color',
-                url: item.eye_color,
-              },
-
-              {
-                name: 'gender',
-                url: item.gender,
-              },
-              {
-                name: 'hair_color',
-                url: item.hair_color,
-              },
-              {
-                name: 'height',
-                url: item.height,
-              },
-              {
                 name: 'homeworld',
                 url: item.homeworld,
               },
@@ -64,7 +63,7 @@ function List({ input }) {
                 url: item.mass,
               },
               {
-                name: 'skin_color',
+                name: 'skin color',
                 url: item.skin_color,
               },
               {

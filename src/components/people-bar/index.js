@@ -13,8 +13,10 @@ const PeopleBar = () => {
         isNavBarVisible ? 'is-active' : ''
       }`}
     >
-      <SearchBar inputText={inputText} setInputText={setInputText} />
-      <PeopleList input={inputText} />
+      <div>
+        <SearchBar inputText={inputText} setInputText={setInputText} />
+        <PeopleList input={inputText} />
+      </div>
     </div>
   );
 };

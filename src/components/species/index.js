@@ -20,11 +20,11 @@ const Species = () => {
                   url: specie.name,
                 },
                 {
-                  name: 'average_height',
+                  name: 'average height',
                   url: specie.average_height,
                 },
                 {
-                  name: 'average_lifespan',
+                  name: 'average lifespan',
                   url: specie.average_lifespan,
                 },
                 {
@@ -49,7 +49,7 @@ const Species = () => {
                   url: specie.eye_colors,
                 },
                 {
-                  name: 'hair_colors',
+                  name: 'hair colors',
                   url: specie.hair_colors,
                 },
                 {
@@ -61,7 +61,7 @@ const Species = () => {
                   url: specie.language,
                 },
                 {
-                  name: 'skin_colors',
+                  name: 'skin colors',
                   url: specie.skin_colors,
                 },
                 {

@@ -1,10 +1,14 @@
 .avatar {
-  --width: 2.5rem;
-  width: var(--width);
-  height: var(--width);
-  min-width: var(--width);
-  min-height: var(--width);
+  $width: 2.5rem;
+  width: $width;
+  height: $width;
+  min-width: $width;
+  min-height: $width;
   box-sizing: initial;
   border-radius: 50%;
   cursor: pointer;
+
+  @media (max-width: 900px) {
+    $width: 1.5rem;
+  }
 }
