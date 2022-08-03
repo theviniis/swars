@@ -21,4 +21,11 @@
       align-items: center;
     }
   }
+
+  @media (max-width: 600px) {
+    .content__header {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
 }

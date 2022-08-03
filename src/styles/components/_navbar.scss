@@ -3,6 +3,7 @@
   @include flex(column, 0.5rem);
   font-size: 1.25rem;
   height: 100vh;
+  background-color: $c-bg;
 
   a {
     @extend .transition;
@@ -71,6 +72,28 @@
         display: none;
       }
     }
+  }
+
+  &.mobile {
+    height: unset;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    z-index: 3;
+
+    &,
+    .nav__list {
+      @include flex(row, 0.5rem);
+    }
+    &__profile {
+      flex-direction: column;
+    }
+  }
+
+  .logo {
+    display: none;
   }
 }
 

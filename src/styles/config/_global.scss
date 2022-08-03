@@ -9,11 +9,12 @@
     grid-template-columns: min-content minmax(280px, 1fr);
   }
 
+  @media (max-width: 600px) {
+    display: block;
+  }
+
   & > * {
     padding: 1rem;
-    @media (max-width: 400px) {
-      padding: 0.25rem;
-    }
   }
 }
 
