@@ -19,12 +19,10 @@
 
   &.mobile {
     display: none;
-    transform: translateX(100px);
     position: absolute;
     inset: 0;
-    padding: 1rem;
     > *:first-child {
-      margin-top: 5rem;
+      margin-top: $header-height;
     }
   }
 

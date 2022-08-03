@@ -40,9 +40,11 @@
 
   &__profile {
     display: flex;
+    align-items: center;
     gap: 1rem;
     margin-top: auto;
-    align-items: center;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
 
     .avatar {
       --width: 2.5rem;
