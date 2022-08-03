@@ -1,6 +1,5 @@
 .page__content {
-  margin-top: 1rem;
-  max-height: 100vh;
+  max-height: calc(100vh - ($page-header-height + 1rem));
   overflow-y: scroll;
 
   &::-webkit-scrollbar {

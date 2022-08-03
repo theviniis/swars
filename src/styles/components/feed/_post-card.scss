@@ -1,7 +1,9 @@
 .post-card {
   @include flex(row, 1rem);
   font-size: 0.9375rem;
-
+  &:last-child {
+    margin-block-end: 1rem;
+  }
   &__content {
     @include flex(column, 0.5rem);
     width: 100%;
