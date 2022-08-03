@@ -1,34 +1,35 @@
 import React from 'react';
-import axios from 'axios';
 
 const CustomDetail = ({ person, attr }) => {
   // recives an name for summary tag and an url with urls
   const [data, setData] = React.useState([]);
 
-  React.useEffect(() => {
+  React.useMemo(() => {
     // calls memo to run function once
-    const fetchData = async (urlArray) => {
-      if (!urlArray) return;
+    const fetchData = (urlArray) => {
+      if (!urlArray && !urlArray.length) return;
       // check if array isnt empty
-      axios
-        .all(urlArray.map((url) => axios.get(url)))
-        .then((data) => setData(data));
-      // use axios to fetch each url and spread data in data state
+
+      const fetchEachUrl = async (url) => {
+        //fetchs each url
+        const res = await fetch(url);
+        const json = await res.json();
+        setData((currentList) => [...currentList, json]);
+        //spread each fetch in data state
+      };
+
+      urlArray.map((url) => fetchEachUrl(url));
+      //maps each url and calls fetchEachUrl function
     };
     fetchData(person[attr]);
   }, [person, attr]);
-
   return (
     <details>
       <summary className='attr'>{attr.replace('_', ' ')}:</summary>
       {data &&
-        data.map((item) => (
-          // for each data render a span with the props
-          <div
-            key={item.data.name ? item.data.name : item.data.title}
-            className='attr-desc'
-          >
-            {item.data.name ? item.data.name : item.data.title}
+        data.map(({ name, title }, index) => (
+          <div className='attr-desc' key={(name, index || title, index)}>
+            {name || title}
           </div>
         ))}
     </details>
