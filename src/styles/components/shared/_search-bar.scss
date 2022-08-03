@@ -4,6 +4,7 @@
   border-radius: 9999px;
   padding: 0.25rem 1rem;
   border: 1px solid lighten($c-bg, 10%);
+  max-height: calc($header-height - 1rem);
   @extend .transition;
   &:focus-within {
     border: 1px solid $c-primary;
