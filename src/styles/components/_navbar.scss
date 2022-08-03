@@ -90,15 +90,14 @@
     &__profile {
       flex-direction: column;
     }
-  }
-
-  .logo {
-    display: none;
+    .logo {
+      display: none;
+    }
   }
 }
 
 .logo {
-  max-width: 8rem;
+  max-width: 6rem;
   min-width: 2rem;
   margin-block-end: 0.5rem;
 }
