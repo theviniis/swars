@@ -23,6 +23,7 @@ img {
 
 html {
   scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 button {
@@ -36,9 +37,9 @@ body {
   color: $c-fg;
   max-height: 100vh;
   max-width: $max-width;
-  overflow: hidden;
   margin: 0 auto;
   line-height: 1.5;
+  overflow: hidden;
 }
 
 a,

@@ -6,18 +6,20 @@ import './styles/application.scss';
 import PeopleBar from './components/people-bar';
 import Worlds from './components/worlds';
 import Species from './components/species';
+import PeopleList from './components/PeopleList/PeopleList';
 
 function App() {
   return (
     <BrowserRouter>
       <div className='app grid-wrapper'>
-        <NavBar />
+        {/* <NavBar /> */}
         <Routes>
-          <Route path='/' element={<Feed />} />
-          <Route path='worlds' element={<Worlds />} />
-          <Route path='species' element={<Species />} />
+          {/* <Route path='/' element={<Feed />} /> */}
+          {/* <Route path='worlds' element={<Worlds />} /> */}
+          {/* <Route path='species' element={<Species />} /> */}
+          <Route path='/' element={<PeopleList />} />
         </Routes>
-        <PeopleBar />
+        {/* <PeopleBar /> */}
       </div>
     </BrowserRouter>
   );
