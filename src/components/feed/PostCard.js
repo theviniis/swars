@@ -9,6 +9,7 @@ import BorderLine from '../Shared/BorderLine';
 
 const PostCard = ({ name, url, description }) => {
   const [isLiked, setIsLiked] = React.useState(false);
+
   //set post like state
   return (
     <div className='post-card card'>

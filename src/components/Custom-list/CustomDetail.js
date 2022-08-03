@@ -5,10 +5,11 @@ const CustomDetail = ({ person, attr }) => {
   // recives an name for summary tag and an url with urls
   const [data, setData] = React.useState([]);
 
-  React.useMemo(() => {
+  React.useEffect(() => {
     // calls memo to run function once
     const fetchData = async (urlArray) => {
-      if (!urlArray.length) return;
+      if (!urlArray) return;
+      console.log(urlArray);
       axios
         .all(urlArray.map((url) => axios.get(url)))
         .then((data) => setData(data));

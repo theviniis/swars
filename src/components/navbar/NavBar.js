@@ -6,7 +6,6 @@ import ProfileCard from './ProfileCard';
 
 const NavBar = () => {
   const mobile = useMedia('(max-width: 600px)');
-  console.log(mobile);
   return (
     <>
       <nav className={`nav ${mobile ? 'mobile' : ''}`}>
