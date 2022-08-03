@@ -1,0 +1,17 @@
+.page-not-found {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  position: absolute;
+  background-color: $c-bg;
+  inset: 0;
+  z-index: 80;
+  font-size: 1.75rem;
+
+  color: $c-primary;
+
+  a {
+    @extend .button;
+    margin-block-start: 2rem;
+  }
+}
