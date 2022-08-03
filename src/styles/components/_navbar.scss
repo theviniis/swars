@@ -31,11 +31,6 @@
       font-weight: 700;
       background-color: lighten($c-bg, 10%);
     }
-    @media (max-width: 1026px) {
-      .section {
-        display: none;
-      }
-    }
   }
 
   &__profile {
@@ -68,6 +63,9 @@
     & {
       align-items: center;
     }
+    .section {
+      display: none;
+    }
     &__profile {
       .profile__info,
       .see-more {
@@ -87,7 +85,7 @@
 
     &,
     .nav__list {
-      @include flex(row, 0.5rem);
+      @include flex(row-reverse, 0.5rem);
     }
     &__profile {
       flex-direction: column;

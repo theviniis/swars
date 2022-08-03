@@ -5,7 +5,7 @@ import NavList from './NavList';
 import ProfileCard from './ProfileCard';
 
 const NavBar = () => {
-  const mobile = useMedia('(max-width: 600px)');
+  const mobile = useMedia('(max-width: 900px)');
   return (
     <>
       <nav className={`nav ${mobile ? 'mobile' : ''}`}>
