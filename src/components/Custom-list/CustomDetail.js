@@ -7,7 +7,7 @@ const CustomDetail = ({ person, attr }) => {
   React.useMemo(() => {
     // calls memo to run function once
     const fetchData = (urlArray) => {
-      if (!urlArray && !urlArray.length) return;
+      if (!urlArray || !urlArray.length) return;
       // check if array isnt empty
 
       const fetchEachUrl = async (url) => {
