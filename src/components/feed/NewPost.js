@@ -16,8 +16,8 @@ const NewPost = () => {
     if (!inputText.length) return;
     //check if the input are empty then return
     return setPosts([
-      // post a new post passing an object
       {
+        // adds a new post passing an object
         name: user.name,
         url: user.url,
         avatar: avatar,
@@ -33,8 +33,8 @@ const NewPost = () => {
       <Avatar />
       <form onSubmit={handleSubmit} className='new-post__form'>
         <textarea
-          name=''
-          id=''
+          name='post__input'
+          id='post__input'
           placeholder='What is happening?'
           cols='1'
           rows='2'
