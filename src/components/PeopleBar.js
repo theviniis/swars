@@ -9,6 +9,7 @@ const PeopleBar = () => {
   const { mobile, isNavBarVisible } = React.useContext(GlobalContext);
   //cals mobile state and nav-bar visibility state from global context
   const url = 'https://swapi.dev/api/people';
+  //fetch data and loading state using custom hook
 
   return (
     <div
