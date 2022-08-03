@@ -9,7 +9,7 @@ const SearchBar = ({ setInputText }) => {
         id='search-bar'
         type='search'
         placeholder='Search for someone'
-        onChange={(e) => setInputText(e.target.value)}
+        onChange={(e) => setInputText(e.target.value.toLowerCase())}
         // change inputText state onChange
       />
     </label>
