@@ -9,7 +9,7 @@ const CustomDetail = ({ person, attr }) => {
     // calls memo to run function once
     const fetchData = async (urlArray) => {
       if (!urlArray) return;
-      console.log(urlArray);
+      // check if array isnt empty
       axios
         .all(urlArray.map((url) => axios.get(url)))
         .then((data) => setData(data));

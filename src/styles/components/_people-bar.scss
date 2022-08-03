@@ -1,18 +1,18 @@
 .people-bar {
   animation: fade-left 250ms forwards;
   @include flex(column, 1rem);
+  position: relative;
+  z-index: 9;
 
   .search-bar,
   &__custom__list {
-    position: relative;
-    z-index: 8;
+    z-index: 20;
   }
 
   &::before {
     content: '';
     display: block;
     position: absolute;
-    z-index: 5;
     background-color: $c-bg;
     inset: 0;
   }
