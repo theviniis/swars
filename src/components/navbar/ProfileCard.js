@@ -1,5 +1,5 @@
 import React from 'react';
-import Avatar from '../shared/Avatar';
+import Avatar from '../Shared/Avatar';
 import { ReactComponent as SeeMore } from '../../assets/see-more.svg';
 import { GlobalContext } from '../../GlobalContext';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import NewPost from './NewPost';
 import PostCard from './PostCard';
 import { GlobalContext } from '../../GlobalContext';
-import Page from '../shared/Page';
+import Page from '../Shared/Page';
 
 const Feed = () => {
   const { posts } = React.useContext(GlobalContext);

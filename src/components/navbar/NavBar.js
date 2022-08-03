@@ -5,11 +5,13 @@ import ProfileCard from './ProfileCard';
 
 const NavBar = () => {
   return (
-    <nav className='nav'>
-      <Logo className='logo' />
-      <NavList />
-      <ProfileCard />
-    </nav>
+    <>
+      <nav className={'nav'}>
+        <Logo className='logo' />
+        <NavList />
+        <ProfileCard />
+      </nav>
+    </>
   );
 };
 

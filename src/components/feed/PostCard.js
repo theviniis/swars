@@ -1,11 +1,11 @@
 import React from 'react';
-import Avatar from '../shared/Avatar';
+import Avatar from '../Shared/Avatar';
 import { ReactComponent as Like } from '../../assets/like.svg';
 import { ReactComponent as Comment } from '../../assets/comment.svg';
 import { ReactComponent as Share } from '../../assets/share.svg';
 import { ReactComponent as LikeFilled } from '../../assets/like-filled.svg';
 
-import BorderLine from '../shared/BorderLine';
+import BorderLine from '../Shared/BorderLine';
 
 const PostCard = ({ name, url, description }) => {
   const [isLiked, setIsLiked] = React.useState(false);

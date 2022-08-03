@@ -1,25 +1,23 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import NavBar from './components/navbar';
-import Feed from './components/feed';
+import NavBar from './components/Navbar/NavBar';
+import Feed from './components/Feed/Feed';
 import './styles/application.scss';
-import PeopleBar from './components/people-bar';
-import Worlds from './components/worlds';
-import Species from './components/species';
-import PeopleList from './components/PeopleList/PeopleList';
+import PeopleBar from './components/PeopleBar';
+import Worlds from './components/Worlds';
+import Species from './components/Species';
 
 function App() {
   return (
     <BrowserRouter>
       <div className='app grid-wrapper'>
-        {/* <NavBar /> */}
+        <NavBar />
         <Routes>
-          {/* <Route path='/' element={<Feed />} /> */}
-          {/* <Route path='worlds' element={<Worlds />} /> */}
-          {/* <Route path='species' element={<Species />} /> */}
-          <Route path='/' element={<PeopleList />} />
+          <Route path='/' element={<Feed />} />
+          <Route path='worlds' element={<Worlds />} />
+          <Route path='species' element={<Species />} />
         </Routes>
-        {/* <PeopleBar /> */}
+        <PeopleBar />
       </div>
     </BrowserRouter>
   );

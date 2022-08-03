@@ -1,46 +1,35 @@
 .people-bar {
+  animation: fade-left 250ms forwards;
   @include flex(column, 1rem);
-  @extend .transition;
-  > div {
-    @include flex(column, 1rem);
+
+  .search-bar,
+  &__custom__list {
+    position: relative;
+    z-index: 8;
   }
-  .people {
-    max-height: 100vh;
-    overflow-y: scroll;
 
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    &__item + &__item {
-      margin-block-start: 1rem;
-    }
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 5;
+    background-color: $c-bg;
+    inset: 0;
   }
 
   &.mobile {
     display: none;
+    transform: translateX(100px);
     position: absolute;
     inset: 0;
-    animation: fade-left 250ms forwards;
-
-    & > div {
-      z-index: 8;
-      margin: 5rem auto 0 auto;
-      width: 100%;
+    padding: 1rem;
+    > *:first-child {
+      margin-top: 5rem;
     }
+  }
 
-    &::before {
-      content: '';
-      display: block;
-      position: absolute;
-      z-index: 5;
-      background-color: $c-bg;
-      inset: 0;
-    }
-
-    &.is-active {
-      display: flex;
-    }
+  &.is-active {
+    display: flex;
   }
 }
 

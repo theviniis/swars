@@ -1,9 +1,9 @@
 import React from 'react';
 import { ReactComponent as UploadImg } from '../../assets/img.svg';
 import { GlobalContext } from '../../GlobalContext';
-import Avatar from '../shared/Avatar';
-import BorderLine from '../shared/BorderLine';
-import Button from '../shared/Button';
+import Avatar from '../Shared/Avatar';
+import BorderLine from '../Shared/BorderLine';
+import Button from '../Shared/Button';
 
 const NewPost = () => {
   const { user, avatar, posts, setPosts } = React.useContext(GlobalContext);

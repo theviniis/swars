@@ -1,0 +1,51 @@
+[class*='custom__list'] {
+  &,
+  .custom__item {
+    @include flex(column, 1rem);
+  }
+
+  .custom__item {
+    @extend .card;
+    @extend .transition;
+
+    &__header,
+    dl {
+      @include flex(row);
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__header {
+      font-weight: 700;
+    }
+
+    &__content {
+      text-transform: capitalize;
+
+      li {
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+
+        .attr {
+          font-weight: 700;
+        }
+
+        .attr-desc {
+          opacity: 0.7;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+
+        &:nth-child(2n + 1) {
+          background-color: lighten($c-bg, 15%);
+        }
+      }
+    }
+    &.is-active {
+      .icon {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}

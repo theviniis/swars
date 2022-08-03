@@ -2,7 +2,7 @@ import React from 'react';
 import { GlobalContext } from '../../GlobalContext';
 
 const PageHeader = ({ children }) => {
-  const { isNavBarVisible, setIsNavBarVisible } =
+  const { isNavBarVisible, setIsNavBarVisible, mobile } =
     React.useContext(GlobalContext);
   // calls navbar visibility state from global context
 
